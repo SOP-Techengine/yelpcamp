@@ -24,6 +24,10 @@ app.use(methodOverride("_method"));
 mongoose.connect("mongodb+srv://techengine:1990june30@techengine-kt6bq.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useCreateIndex: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('ERROR:', err.message);
 });
 
 app.use(flash());
